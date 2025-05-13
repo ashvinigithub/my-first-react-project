@@ -1,38 +1,356 @@
-.App {
+/* Base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.consignment-form {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: white;
+}
+
+/* A4 container */
+.a4-container {
+  width: 297mm; /* A4 width in landscape */
+  height: 210mm; /* A4 height in landscape */
+  margin: 0 auto;
+  background: white;
+  padding: 5mm;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Side by side layout */
+.side-by-side-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.copy {
+  width: 48%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.form-container {
+  border: 1px solid #333;
+  padding: 5px;
+  position: relative;
+  font-size: 8px;
+  height: 100%;
+}
+
+/* Header styles */
+.header-right {
+  text-align: right;
+  margin-bottom: 3px;
+}
+
+.header-title {
+  font-weight: bold;
+  font-size: 8px;
+}
+
+.company-header {
+  text-align: center;
+  margin-bottom: 3px;
+}
+
+.company-name {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.company-tagline {
+  font-size: 7px;
+  font-style: italic;
+}
+
+.company-details {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.company-branch {
+  font-weight: bold;
+  margin-bottom: 1px;
+  font-size: 8px;
+}
+
+.company-address {
+  font-size: 6px;
+  line-height: 1.1;
+}
+
+/* Form grid layout */
+.form-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+.left-column {
+  grid-column: 1 / 2;
+}
+
+.right-column {
+  grid-column: 2 / 3;
+  border: 1px solid #999;
+  padding: 3px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.right-column-small {
+  grid-column: 2 / 3;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Form elements */
+.form-group {
+  margin-bottom: 3px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form-label {
+  display: block;
+  font-size: 7px;
+  font-weight: bold;
+  margin-bottom: 1px;
+}
+
+.form-input, .form-textarea {
+  width: 100%;
+  padding: 1px;
+  border: 1px solid #999;
+  font-size: 7px;
+}
+
+.form-textarea {
+  resize: none;
+  height: auto;
+  min-height: 20px;
+}
+
+.note-header {
+  font-weight: bold;
+  font-size: 9px;
+  margin-bottom: 1px;
+}
+
+.note-subheader {
+  font-size: 7px;
+  margin-bottom: 3px;
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+}
+
+.weight-input {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.weight-unit {
+  padding: 1px;
+  font-size: 7px;
+}
+
+/* Materials table */
+.materials-section {
+  margin-bottom: 5px;
+}
+
+.materials-header {
+  font-size: 7px;
+  font-weight: bold;
+  margin-bottom: 1px;
+}
+
+.materials-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #333;
+}
+
+.materials-table th, .materials-table td {
+  border: 1px solid #333;
+  padding: 1px;
+  text-align: left;
+  font-size: 7px;
+}
+
+.materials-table th {
+  background-color: #f5f5f5;
+}
+
+.table-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 7px;
+}
+
+.action-column {
+  width: 15px;
+}
+
+.add-button {
+  margin-top: 2px;
+  background-color: #3b82f6;
   color: white;
+  padding: 1px 3px;
+  font-size: 7px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.add-button:hover {
+  background-color: #2563eb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.remove-button {
+  color: #ef4444;
+  background: none;
+  border: none;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.remove-button:hover {
+  color: #b91c1c;
+}
+
+/* Footer sections */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+.invoice-section {
+  grid-column: 1 / 2;
+}
+
+.delivery-section {
+  grid-column: 2 / 3;
+  border-left: 1px solid #999;
+  padding-left: 5px;
+}
+
+.delivery-header {
+  font-weight: bold;
+  margin-bottom: 2px;
+  font-size: 8px;
+}
+
+.terms-text, .jurisdiction-text {
+  font-size: 6px;
+  margin-top: 3px;
+  line-height: 1.1;
+}
+
+/* Signature section */
+.signature-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.signature-box {
+  text-align: center;
+}
+
+.signature-line {
+  margin-bottom: 1px;
+  border-top: 1px solid #999;
+  padding-top: 2px;
+  font-size: 7px;
+}
+
+.website-url {
+  font-size: 6px;
+}
+
+/* Service mode */
+.service-mode {
+  text-align: center;
+  margin-top: 3px;
+  font-size: 7px;
+}
+
+.service-input {
+  border: none;
+  border-bottom: 1px solid #999;
+  margin: 0 2px;
+  text-align: center;
+  width: 30px;
+  font-size: 7px;
+}
+
+/* Print button */
+.print-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.print-button {
+  background-color: #2563eb;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.print-button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Print styles */
+@media print {
+  @page {
+    size: landscape;
+    margin: 0;
   }
-  to {
-    transform: rotate(360deg);
+  
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .consignment-form {
+    padding: 0;
+    width: 100%;
+  }
+  
+  .a4-container {
+    width: 100%;
+    height: 100%;
+    padding: 5mm;
+    margin: 0;
+  }
+  
+  .form-container {
+    border: 1px solid #000;
+  }
+  
+  .add-button, .remove-button, .print-section, .action-column {
+    display: none;
+  }
+  
+  .form-input, .form-textarea, .table-input {
+    border: none;
   }
 }
