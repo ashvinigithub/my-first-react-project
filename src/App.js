@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 
+
 function App() {
   const [formData, setFormData] = useState({
     gcnNo: '12273',
@@ -32,6 +33,38 @@ function App() {
     receivedTime: '',
     receivedRemarks: ''
   });
+
+  // Initial state to use for reset
+  const initialFormData = {
+    gcnNo: '',
+    date: '',
+    // from: '',
+    to: '',
+    sealNo: '',
+    vehicleNo: '',
+    vehicleType: '',
+    serviceMode: '',
+    actualWt: '',
+    chargableWt: '',
+    
+    // consignor: '',
+    // consignorAddress: '',
+    
+    consignee: '',
+    consigneeAddress: '',
+    phone: '',
+    
+    materials: [
+      { description: '', packages: '', remark: '' }
+    ],
+    
+    invoiceNo: '',
+    declaredValue: '',
+    
+    receivedBy: '',
+    receivedTime: '',
+    receivedRemarks: ''
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -75,6 +108,11 @@ function App() {
     window.print();
   };
 
+  // Reset form function
+  const resetForm = () => {
+    setFormData(initialFormData);
+  };
+
   // Function to render a single form
   const renderForm = (copyType) => {
     return (
@@ -85,16 +123,16 @@ function App() {
         </div>
         
         <div className="company-header">
-          <div className="company-name">RP LOGISTICS</div>
+          <div className="company-name">MAHENDRA ROAD LINE</div>
           <div className="company-tagline">YOUR GOODS ARE IN GOOD HAND</div>
         </div>
         
         <div className="company-details">
-          <div className="company-branch">RP LOGISTICS(UP)</div>
+          <div className="company-branch">MAHENDRA ROAD LINE(UP)</div>
           <div className="company-address">
-            Mohansarai Bypass, Near Sangeeta Hospital, Varanasi, Uttar Pradesh-221302<br />
+            Lahartara, GT Road Varanasi, Uttar Pradesh-221002<br />
             Contact No -9794674630 & 9555367164<br />
-            GSTIN:09FXCPM9741NIZM Email:info@rplogistics.in Url:www.rplogistics.in
+            GSTIN:09FXCPM9741NIZM Email:info@mahendraroadline.in Url:www.mahendraroadline.in
           </div>
         </div>
         
@@ -395,8 +433,8 @@ function App() {
         <div className="signature-section">
           <div></div>
           <div className="signature-box">
-            <div className="signature-line">Signature of Booking Incharge for RP LOGISTICS(UP)</div>
-            <div className="website-url">https://rplogistic.indiahostbiz.com/GCNotePrint.aspx</div>
+            <div className="signature-line">Signature of Booking Incharge for MAHENDRA ROAD LINE(UP)</div>
+            <div className="website-url">https://mahendraroadline.indiahostbiz.com/GCNotePrint.aspx</div>
           </div>
         </div>
         
@@ -424,6 +462,21 @@ function App() {
         >
           Print Form
         </button>
+        <button 
+          onClick={resetForm}
+          className="reset-button"
+          style={{
+            marginLeft: '10px',
+            padding: '8px 16px',
+            backgroundColor: '#f44336',
+            color: 'white',
+            border: 'none',
+            borderRadius: '4px',
+            cursor: 'pointer'
+          }}
+        >
+          Reset Form
+        </button>
       </div>
       
       <div className="a4-container">
@@ -439,5 +492,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
