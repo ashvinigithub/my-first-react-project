@@ -131,8 +131,8 @@ function App() {
           <div className="company-branch">MAHENDRA ROAD LINE(UP)</div>
           <div className="company-address">
             Lahartara, GT Road Varanasi, Uttar Pradesh-221002<br />
-            Contact No -9794674630 & 9555367164<br />
-            GSTIN:09FXCPM9741NIZM Email:info@mahendraroadline.in Url:www.mahendraroadline.in
+            Contact No -9838674375<br />
+            PAN:BTFPS7011G Email:info@mahendraroadline.in Url:www.mahendraroadline.in
           </div>
         </div>
         
